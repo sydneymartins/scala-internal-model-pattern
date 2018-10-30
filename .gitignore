@@ -1,0 +1,14 @@
+*.settings/
+*.iml
+*.ipr
+*.iws
+.classpath
+.project
+target/
+lib/
+logs/
+test-data/
+.idea
+dependency-reduced-pom.xml
+*secrets.json
+api/src/main/java/expedia/
