@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2015 Expedia Inc
+ * Copyright (C) 2018 Julian Martin
  */
 
 package internalmodel.mapper
