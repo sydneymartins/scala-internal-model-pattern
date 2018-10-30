@@ -1,0 +1,1 @@
+# scala-internal-model-pattern
