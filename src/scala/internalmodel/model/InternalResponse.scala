@@ -1,6 +1,6 @@
 package internalmodel.model
 
-class InternalResponse {
+class InternalResponse extends IResponseTemplate {
   var expectedName: String = ""
   var validatedAddress: String = ""
 }

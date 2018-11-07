@@ -1,6 +1,6 @@
 package internalmodel.model
 
-class InternalRequest {
+class InternalRequest extends IRequestTemplate {
   var name: String = ""
   var address: String = ""
 }

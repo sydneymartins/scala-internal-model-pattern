@@ -5,10 +5,10 @@
 package internalmodel.mapper
 
 import internalmodel.Details.model.DetailsRequest
-import internalmodel.model.InternalRequest
+import internalmodel.model.{IRequestTemplate, InternalRequest}
 
 class RequestModelAdapter(detailsRequest: DetailsRequest) extends IRequestModelAdapter {
-  override def getRequest: InternalRequest = {
+  override def getRequest: IRequestTemplate = {
     val iRequest = new InternalRequest
     iRequest.name = detailsRequest.name
     iRequest.address = detailsRequest.address
