@@ -4,22 +4,18 @@
 
 package internalmodel
 
-import internalmodel.mapper.{IRequestModelAdapter, IResponseModelAdapter, ResponseModelAdapter}
-import internalmodel.model.{InternalRequest, InternalResponse}
+import internalmodel.model.{IRequestTemplate, IResponseTemplate}
 import javax.ws.rs.client.{Client, ClientBuilder, Entity}
 
 import scala.util.Try
 
 class DetailsService(client: Client = ClientBuilder.newClient()) {
 
-  def callService(adapter: IRequestModelAdapter): IResponseModelAdapter = {
-    val response =
-      Try(post(adapter.getRequest,
-        s"https://localhost:7000/test"))
-    new ResponseModelAdapter(response.toOption)
+  def details(request: IRequestTemplate): Either[Throwable, IResponseTemplate] = {
+    Try(post(request, s"https://localhost:7000/test")).toEither
   }
-  def post(request: InternalRequest, url: String): InternalResponse = {
-    client.target(url).request().post(Entity.json(request), classOf[InternalResponse])
+  def post(request: IRequestTemplate, url: String): IResponseTemplate = {
+    client.target(url).request().post(Entity.json(request), classOf[IResponseTemplate])
   }
 }
 

@@ -4,14 +4,14 @@
 
 package internalmodel.mapper
 
-import internalmodel.model.InternalRequest
+import internalmodel.model.IRequestTemplate
 
 /**
   * Interface for request mapping.
   * This class will be used to build the internal request.
   */
 trait IRequestModelAdapter {
-  def getRequest: InternalRequest
+  def getRequest: IRequestTemplate
 }
 
 
